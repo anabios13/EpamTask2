@@ -76,13 +76,21 @@ public class StringHandler {
                     arrayOfWords[i] = bufferForCharArray;
                 }
             }
+            arrayOfWords[i]+=" ";
         }
+        if(!arrayOfWords[arrayOfWords.length-1].contains("\n"))
+            arrayOfWords[arrayOfWords.length-1]+="\n";
+        for(int j=0;j<arrayOfSentences.length;j++){
+            if(!arrayOfSentences[j].contains("\n"))
+                arrayOfSentences[j]+="\n";
+        }
+
         arrayOfSentences[numberOfSentence] = "";
         for (int j = 0; j < arrayOfWords.length; j++)
-            arrayOfSentences[numberOfSentence] += arrayOfWords[j] + " ";
+            arrayOfSentences[numberOfSentence] += arrayOfWords[j];
         line = "";
         for (int j = 0; j < arrayOfSentences.length; j++)
-            line += arrayOfSentences[j] += "\n";
+            line += arrayOfSentences[j];
         System.out.println(line);
         return line;
     }
